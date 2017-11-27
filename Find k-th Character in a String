@@ -1,0 +1,31 @@
+package practice.com.src.arrays;
+
+public class FindkthCharacter {
+	public static void main(String[] args) {
+		String input = "5 5 3";
+		String input1 = "11 6 4";
+
+		String[] inputArr = input1.split(" ");
+		int m = Integer.parseInt(inputArr[0]);
+		int k = Integer.parseInt(inputArr[1]);
+		int n = Integer.parseInt(inputArr[2]);
+		System.out.println(FindkthCharacterMethod(m, k, n));
+
+	}
+
+	public static char FindkthCharacterMethod(int m, int k, int n) {
+		String binary = Integer.toBinaryString(m);
+			for (int i = 0; i < n; i++) {
+				binary=binary.replace("1","$");
+				System.out.println(binary);
+				binary=binary.replace("0","#");
+				System.out.println(binary);
+				binary=binary.replace("$","10");
+				System.out.println(binary);
+				binary=binary.replace("#","01");
+				System.out.println(binary);
+				System.out.println();
+			}
+		return binary.charAt(k);
+	}
+}
