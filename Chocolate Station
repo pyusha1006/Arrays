@@ -1,0 +1,31 @@
+package hackerRank.problem.practice;
+
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
+
+public class Stats {
+
+	    public static void main(String[] args) {
+	    	int size = 1;
+	    	int[] array = {50};			//1,2,3
+	    	int price = 10;
+	    	
+	    	System.out.println(MinimumCostToReachLastStation(size,array,price));
+	    }
+	    
+	    public static int  MinimumCostToReachLastStation(int size,int[] arr,int price){
+	    	int totalChocolatesBought = arr[0];
+	    	int temp = arr[0];
+	    	for(int i =1;i <size;i++){
+	    		if(temp<arr[i]){
+	    			totalChocolatesBought = totalChocolatesBought+Math.abs(temp-arr[i]);
+	    		}
+	    		else{
+	    				arr[i] = arr[i]+Math.abs(temp-arr[i]);
+	    		}
+	    		temp = arr[i];
+	    	}
+	    	return totalChocolatesBought*price;
+	    }
+}
