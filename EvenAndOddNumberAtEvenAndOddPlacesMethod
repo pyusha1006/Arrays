@@ -1,0 +1,40 @@
+package com.practice.pyusha.arrays;
+
+import java.util.*;
+
+class EvenAndOddNumberAtEvenAndOddPlaces {
+	public static void main (String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int t = sc.nextInt();
+		for (int i = 0; i < t; i++){
+		int size = sc.nextInt();
+		int[] a = new int[size];
+		for (int j = 0; j < size; j++) {
+		    a[j] = sc.nextInt();
+		}
+		EvenAndOddNumberAtEvenAndOddPlacesMethod(a,size);
+		}
+	}
+		
+		public static void EvenAndOddNumberAtEvenAndOddPlacesMethod(int[] a, int size){
+		
+		int[] ouputArray = new int[size*2];
+		int oddI = 1;
+		int evenI = 0;
+		for (int k = 0; k < size; k++) {
+		    if ((a[k] % 2) == 0) {
+		    	ouputArray[evenI] = a[k];
+		        evenI += 2;
+		    } else {
+		    	ouputArray[oddI] = a[k];
+		        oddI += 2;
+		    }
+		}
+		for(int z : ouputArray) {
+		    if (z != 0) {
+		        System.out.print(z + " ");
+		    }
+		}
+		System.out.println();
+		}
+}
